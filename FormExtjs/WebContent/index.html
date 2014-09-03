@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<link rel="stylesheet"
+	href="http://cdn.sencha.io/try/extjs/4.1.1/resources/css/ext-all.css" />
+<script src="http://cdn.sencha.io/try/extjs/4.1.1/ext-all.js"></script>
+<script type="text/javascript"></script>
+
+</head>
+<body>
+	<script type="text/javascript">
+		Ext.onReady(function() {
+			Ext.create("Ext.form.Panel", {
+				renderTo : Ext.getBody(),
+
+				title : "Form",
+				bodyPadding : 5,
+				width : 350,
+				items : [ {
+
+					xtype : "textfield",
+					fieldLabel : "Firstname",
+					allowBlank : false,
+					name : "firstName"
+				}, {
+					xtype : "textfield",
+					fieldLabel : "LastName",
+					allowBlank : false,
+					name : "lastName",
+				}, {
+					xtype : "textfield",
+					fieldLabel : "Email",
+					allowBlank : false,
+					name : "email"
+				}, {
+					xtype : "datefield",
+					fieldLabel : "D.O.B",
+					allowBlank : false,
+					name : "dob"
+				}, {
+					xtype : "textfield",
+					fieldLabel : "Password",
+					inputType : "password",
+					allowBlank : false,
+					name : "password"
+				}, {
+					xtype : "textfield",
+					fieldLabel : "Confirm Password",
+					inputType : "password",
+					allowBlank : false,
+					name : "confirmPassword"
+				} ],
+
+				buttons : [ {
+					text : 'Submit',
+					action : 'register'
+				},
+
+				{
+					text : 'Reset',
+					handler : function() {
+						this.up('form').getForm().reset();
+					}
+
+				} ]
+			});
+		});
+	</script>
+
+</body>
+</html>
